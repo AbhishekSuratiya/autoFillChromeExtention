@@ -1,0 +1,103 @@
+{
+  "address": "House no 334 Pandit Mohalla Village Kondli",
+  "city": "Delhi",
+  "country": "India",
+  "coverLetterUrl": "https://drive.google.com/file/d/13Z8MzppWbgbYDUQIZZNFsxTxqiIzkfF_/view?usp=drive_link",
+  "currentSalary": "2900000",
+  "currentTitle": "Lead Software Developer",
+  "customFields": [],
+  "dateOfBirth": "1997-09-07",
+  "degree": "Bachelor's",
+  "desiredSalary": "3500000",
+  "desiredTitle": "Front End Developer",
+  "disabilityStatus": "No disability",
+  "email": "a.k.suratiya@gmail.com",
+  "ethnicity": "Asian",
+  "experiences": [
+    {
+      "company": "Planify Capital LTD",
+      "endDate": "Present",
+      "id": "1",
+      "isCurrent": true,
+      "role": "Lead Software Developer",
+      "startDate": "2023-01"
+    },
+    {
+      "company": "Makeen",
+      "endDate": "2022-12",
+      "id": "2",
+      "isCurrent": false,
+      "role": "Software Developer",
+      "startDate": "2022-04"
+    },
+    {
+      "company": "BitCS",
+      "endDate": "2022-03",
+      "id": "3",
+      "isCurrent": false,
+      "role": "Software Developer",
+      "startDate": "2020-07"
+    }
+  ],
+  "fieldOfStudy": "Computer Science",
+  "firstName": "Abhishek",
+  "frameworks": "React.js, React Native, Next.js, Node.js",
+  "fullName": "Abhishek Suratiya",
+  "gender": "Male",
+  "github": "https://github.com/AbhishekSuratiya",
+  "gpa": "8",
+  "graduationYear": "2020",
+  "lastName": "Suratiya",
+  "linkedIn": "https://www.linkedin.com/in/abhishek-suratiya/",
+  "phone": "8468893464",
+  "portfolio": "https://abhishek-suratiya.web.app/",
+  "programmingLanguages": "JavaScript, TypeScript, C++, Python, Java",
+  "remotePreference": "Flexible",
+  "resumeUrl": "https://drive.google.com/file/d/1avhwGzfO2c_UJ4nWtaFnO-wOa4eQLq4h/view?usp=drive_link",
+  "shortcuts": [
+    {
+      "id": "1781197024881",
+      "label": "Planify Role",
+      "lastUsed": 1781242673028,
+      "usages": 6,
+      "value": "As Lead Software Developer at Planify, I lead the design and development of scalable web and mobile platforms, driving architecture decisions, performance optimization, and product delivery. I architected secure authentication systems with RBAC, contributing to a 4x increase in user signups through streamlined onboarding experiences.  I spearheaded the development of the Alpha AIF application using React Native 0.79 and React 19, delivering high-performance experiences with advanced Reanimated-based interactions. I also led the migration and integration of the latest React Native architecture on version 0.85, leveraging TurboModules, Fabric, and modern performance enhancements to improve application responsiveness and maintainability. Additionally, I engineered modern web solutions with Next.js and developed Alpha UI, an enterprise-grade component library built with Radix UI and Tailwind CSS.  Key achievements include reducing application bundle size by 40%, implementing real-time WebSocket communication, integrating biometric authentication, and leading a complete mobile-first redesign of the Planify platform. Additionally, I developed custom SEO strategies for dynamic content and delivered advanced analytics solutions using Highcharts to support data-driven decision-making."
+    },
+    {
+      "id": "1781197063048",
+      "label": "Makeen role",
+      "lastUsed": 1781242147033,
+      "usages": 5,
+      "value": "As a Software Developer at Makeen, I focused on building high-impact mobile solutions and scaling financial platforms. I played a key role in developing a flagship IoT-integrated application that was showcased at Amazon’s re:Invent event. My work involved complex device integrations, real-time data streaming to AWS, and maintaining high-security standards for investment-grade fintech applications.  Key Responsibilities & Achievements Bingsu (IoT-Mobile Integration): Built a robust React Native mobile application featured at Amazon’s re:Invent event, specializing in real-time high-frequency sensor data collection and AWS IoT dashboard synchronization. Advanced Native Features: Successfully implemented high-performance video calling using Vision Camera and integrated real-time geolocation mapping and QR processing via Native Maps. Fintech & Compliance (Fintron Invest): Maintained and scaled critical features for an investment platform, ensuring strict financial compliance and secure management of sensitive user data. Frontend Scaling: Sustained and improved the frontend architecture to ensure a seamless and reliable user experience for a large-scale financial user base."
+    },
+    {
+      "id": "1781197082402",
+      "label": "Bitcs Role",
+      "lastUsed": 1781242180982,
+      "usages": 5,
+      "value": "During my tenure as a Software Developer at BitCS, I focused on building scalable mobile architectures and streamlining development-to-deployment pipelines. I delivered high-traffic business features for international clients, optimized user verification workflows, and implemented enterprise-level analytics and security integrations.  Key Responsibilities & Achievements Scalable Mobile Development: Developed and maintained a high-performance React Native codebase for YaraConnect, leveraging Redux Saga for complex state management and side-effect handling. Workflow Automation: Engineered an automated OTP detection module, significantly improving the user onboarding experience and reducing friction during verification. Analytics & Engagement: Integrated sophisticated engagement tools like CleverTap and secure authentication via Auth0, directly contributing to improved product metrics and user retention. DevOps & CI/CD: Orchestrated seamless over-the-air (OTA) updates using React Native CodePush and automated deployment workflows via Fastlane. Quality Assurance: Maintained high code reliability through comprehensive unit testing with Jest and robust CI pipelines, ensuring stable releases across multiple business features."
+    },
+    {
+      "id": "1781198193111",
+      "label": "US",
+      "lastUsed": 1781241567463,
+      "usages": 5,
+      "value": "United States"
+    },
+    {
+      "id": "1781242106739",
+      "label": "RN Dev",
+      "lastUsed": 1781242157323,
+      "usages": 1,
+      "value": "React Native Developer"
+    }
+  ],
+  "skills": "React.js, React Native, Javascript, TypeScript, GraphQL, Next.js, Zustand, TailwindCSS, Material-UI, Radix UI, Styled Components, HTML5, CSS3, SCSS, WebSockets, SEO, Web App Profiling / Performance Optimization, Fastlane, CodePush OTA Updates, Reanimated, FlashList, MMKV, React Navigation, Branch.io, Firebase, Mixpanel, Sentry, CleverTap, Git, Docker, Jest, ESLint, Prettier",
+  "state": "Delhi",
+  "summary": "Results-driven software engineer with over 5.5+ years of professional experience specializing in building high-performance, scalable web and mobile applications. Proficient in crafting robust architectures using React, React Native, and Next.js.",
+  "university": "Guru Gobind Singh Indraprastha University (GGSIU)",
+  "veteranStatus": "Not a veteran",
+  "willingToRelocate": "Yes",
+  "workAuthorization": "Require Sponsorship",
+  "yearsExperience": "5",
+  "zipCode": "110096"
+}

@@ -1,74 +1,66 @@
-# React + TypeScript + Vite
+# JobFill – Auto-fill Job Applications
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+JobFill is a Chrome Browser Extension that allows you to store your professional profile once and auto-fill job application forms with a single click. It supports popular job boards and applicant tracking systems like Greenhouse, Lever, Workday, LinkedIn, and more.
 
-Currently, two official plugins are available:
+Built with **React**, **TypeScript**, and **Vite**, using Chrome Extension **Manifest V3**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- **One-Click Auto-Fill**: Instantly populate standard job application fields.
+- **Secure Local Storage**: Uses Chrome's local storage to securely save your profile data.
+- **Side Panel & Popup Support**: Easily access the tool from Chrome's side panel or the extension popup.
+- **Extensible**: Designed to easily add new auto-fill fields and support new application platforms.
 
-## React Compiler
+## Prerequisites
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) or another package manager
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup Instructions
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd auto-fill-extension
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+3. **Build the extension:**
+   To build the project for production (which generates the extension files into the `dist` folder), run:
+   ```bash
+   npm run build
+   ```
+   *Note: This command generates the required icons, compiles TypeScript, and builds both the React UI and the content scripts.*
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Loading the Extension in Chrome
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Open Google Chrome and navigate to `chrome://extensions/`.
+2. Turn on **Developer mode** using the toggle switch in the top right corner.
+3. Click the **Load unpacked** button in the top left.
+4. Select the `dist` folder located inside your cloned project directory.
+5. JobFill should now appear in your list of installed extensions.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Configure Your Profile:**
+   - Right-click the JobFill extension icon in your Chrome toolbar and select **Options**.
+   - Fill in your personal details, work experience, links, and other required information, then save your profile.
+   - **Optional:** To quickly test the extension, you can import the provided sample profile backup by uploading the [`jobfill_profile_backup.json`](file:///Users/abhishek/WebstormProjects/auto-fill-extension/jobfill_profile_backup.json) file directly from the options page.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# autoFillChromeExtention
+2. **Auto-Fill Applications:**
+   - Navigate to a supported job application page (e.g., a Greenhouse or Lever job post).
+   - Click the JobFill extension icon or open it in the Chrome Side Panel.
+   - Click the auto-fill button to populate the form fields with your saved profile data.
+
+## Development
+
+- Run `npm run dev` to start the Vite development server (useful for iterating on the UI pages like the options or popup pages).
+- For making changes to the content script or background worker, you will need to run `npm run build` to generate the updated files in the `dist` folder, and then click the refresh icon on the extension card in `chrome://extensions/`.
+- Run `npm run lint` to check for ESLint errors.
+
+## Contributing / Adding New Fields
+
+If you want to extend the auto-fill capabilities by adding new fields, please refer to the detailed guide:
+- [Adding a New Field](ADDING_A_NEW_FIELD.md)

@@ -1,0 +1,551 @@
+/* ── Popup.css – JobFill Extension Popup ────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #080c16;
+  --surface:   #0e1220;
+  --card:      rgba(255,255,255,0.04);
+  --border:    rgba(255,255,255,0.08);
+  --primary:   #6366f1;
+  --primary-g: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --cyan:      #06b6d4;
+  --success:   #10b981;
+  --error:     #ef4444;
+  --warn:      #f59e0b;
+  --text:      #f1f5f9;
+  --muted:     #64748b;
+  --sub:       #94a3b8;
+  --radius:    14px;
+  --font:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* ── Layout ── */
+.popup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow */
+.popup::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: 50%;
+  transform: translateX(-50%);
+  width: 260px; height: 260px;
+  background: radial-gradient(ellipse, rgba(99,102,241,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Header ── */
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+}
+
+.popup-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.popup-title {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  background: linear-gradient(90deg, #a5b4fc, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.popup-settings-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--sub);
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.popup-settings-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(99,102,241,0.1);
+}
+
+/* Mini Progress Ring in Header */
+.popup-mini-ring {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.popup-mini-ring:hover {
+  transform: scale(1.05);
+}
+
+.popup-mini-ring svg {
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(99,102,241,0.25));
+}
+
+
+
+
+/* ── Divider ── */
+.popup-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 20px;
+}
+
+/* ── Action Section ── */
+.popup-action {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Notice banner */
+.popup-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: #fbbf24;
+  font-weight: 500;
+}
+
+.popup-notice--error {
+  background: rgba(239,68,68,0.1);
+  border-color: rgba(239,68,68,0.25);
+  color: #f87171;
+}
+
+/* Success state */
+.popup-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.25);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.popup-success-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--success);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(16,185,129,0.3);
+}
+
+.popup-success-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.popup-success-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6ee7b7;
+  margin-bottom: 1px;
+}
+
+.popup-success-sub {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Main CTA Button */
+.popup-fill-btn {
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  border: none;
+  background: var(--primary-g);
+  color: white;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  box-shadow:
+    0 4px 20px rgba(99,102,241,0.45),
+    0 1px 3px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.popup-fill-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.popup-fill-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 32px rgba(99,102,241,0.55),
+    0 2px 6px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.popup-fill-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow:
+    0 2px 12px rgba(99,102,241,0.4),
+    0 1px 3px rgba(0,0,0,0.3);
+}
+
+.popup-fill-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.popup-fill-btn--loading {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.popup-fill-btn--success {
+  background: linear-gradient(135deg, #059669, #10b981);
+  box-shadow: 0 4px 20px rgba(16,185,129,0.45);
+  height: 38px;
+  font-size: 13px;
+  border-radius: 10px;
+}
+.popup-fill-btn--success:hover:not(:disabled) {
+  box-shadow: 0 6px 24px rgba(16,185,129,0.5);
+  transform: translateY(-1px);
+}
+
+/* Spinner */
+.popup-spinner {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Tips ── */
+.popup-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.popup-tip-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+/* ── Footer ── */
+.popup-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px 16px;
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+}
+
+.popup-profile-link {
+  background: none;
+  border: none;
+  color: var(--sub);
+  font-family: var(--font);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+  padding: 4px 0;
+}
+
+.popup-profile-link:hover {
+  color: #a5b4fc;
+}
+
+.popup-version {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ── Shortcuts Section ── */
+.popup-shortcuts-section {
+  padding: 14px 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup-section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sub);
+}
+
+.popup-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.popup-shortcut-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 11.5px;
+}
+
+.popup-shortcuts-empty-hint {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.popup-shortcuts-manage-link {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: var(--font);
+  font-size: 11.5px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: color 0.15s;
+}
+
+.popup-shortcuts-manage-link:hover {
+  color: #a5b4fc;
+}
+
+/* ── Quick Pills (inline most-used, label-only) ── */
+.popup-quick-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.popup-quick-pill {
+  flex-shrink: 0;
+  padding: 3px 10px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  border-radius: 20px;
+  color: #a5b4fc;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.popup-quick-pill:hover {
+  background: var(--primary-g);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(99, 102, 241, 0.3);
+}
+
+.popup-quick-pill.inserted {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: var(--success);
+  color: #6ee7b7;
+}
+
+/* ── LinkedIn Auto Apply Section ── */
+.popup-li-apply-section {
+  padding: 14px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* LinkedIn-branded main button */
+.popup-li-apply-btn {
+  width: 100%;
+  height: 44px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #0a66c2 0%, #0e86e6 100%);
+  color: white;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 4px 18px rgba(10,102,194,0.45),
+    0 1px 3px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.popup-li-apply-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.popup-li-apply-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 28px rgba(10,102,194,0.55),
+    0 2px 6px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.popup-li-apply-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Running state – red with subtle pulse */
+.popup-li-apply-btn--running {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  box-shadow: 0 4px 18px rgba(220,38,38,0.45), 0 1px 3px rgba(0,0,0,0.3);
+  animation: li_pulse_red 2s ease-in-out infinite;
+}
+
+.popup-li-apply-btn--running:hover:not(:disabled) {
+  box-shadow: 0 6px 24px rgba(220,38,38,0.55), 0 2px 6px rgba(0,0,0,0.3);
+}
+
+@keyframes li_pulse_red {
+  0%, 100% { box-shadow: 0 4px 18px rgba(220,38,38,0.45), 0 1px 3px rgba(0,0,0,0.3); }
+  50%       { box-shadow: 0 4px 26px rgba(220,38,38,0.65), 0 1px 3px rgba(0,0,0,0.3); }
+}
+
+/* Done state – green */
+.popup-li-apply-btn--done {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  box-shadow: 0 4px 18px rgba(16,185,129,0.45), 0 1px 3px rgba(0,0,0,0.3);
+  height: 38px;
+  font-size: 13px;
+  border-radius: 10px;
+}
+
+.popup-li-apply-btn--done:hover:not(:disabled) {
+  box-shadow: 0 6px 24px rgba(16,185,129,0.55), 0 2px 6px rgba(0,0,0,0.3);
+  transform: translateY(-1px);
+}
+
+/* Hint text below button */
+.popup-li-hint {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Done status banner */
+.popup-li-done {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 12px;
+  color: #6ee7b7;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Running progress banner */
+.popup-li-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(99,102,241,0.08);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #a5b4fc;
+  font-weight: 500;
+}
+
+
